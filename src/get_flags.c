@@ -17,7 +17,7 @@ int is_flag(char c, char *str)
     return (0);
 }
 
-int get_flag1(flag_t *flag, char *format, int i)
+int get_flag1(flag_t *flag, char const *format, int i)
 {
     flag->minus = 0;
     flag->plus = 0;
@@ -40,7 +40,7 @@ int get_flag1(flag_t *flag, char *format, int i)
     return (i);
 }
 
-int get_flags(char *format, int i, flags_t *flags)
+int get_flags(char const *format, int i, flags_t *flags)
 {
     i = get_flag1(&flags->flag, format, i);
     char *str = my_strdup_from(format, i);
@@ -54,7 +54,7 @@ int get_flags(char *format, int i, flags_t *flags)
         flags->p = 0;
     str = my_strdup_from(format, i);
     flags->prec = my_getnbr(str);
-    if (flags->prec != 0 || flags->p == 1 && format[i] == '0')
+    if (flags->prec != 0 || (flags->p == 1 && format[i] == '0'))
         i += my_int_len(flags->prec);
     for (; is_flag(format[i], "lhqLjzZt"); i++);
     return (i);

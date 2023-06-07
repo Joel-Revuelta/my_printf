@@ -46,7 +46,7 @@ long double e_round_dec(double a, int prec, long double b)
     return (a);
 }
 
-int status2(int times, int prec, long double b, long double decimal)
+void status2(int times, int prec, long double b, long double decimal)
 {
     for (int b = 0; b < prec; decimal *= 10,
         decimal = e_round_dec(decimal, prec, b), my_put_nbr((int)decimal % 10),
@@ -86,8 +86,7 @@ int status(int times, int prec, long double *a, long double b)
 int fl_e(va_list list, flags_t flags, int *len)
 {
     long double a = va_arg(list, double), *p_a = &a, hh = a;
-    long double decimal;
-    int b, prec = flags.prec, times = my_nbrlen(a) - 1;
+    int prec = flags.prec, times = my_nbrlen(a) - 1;
 
     if ((int)*p_a == 0)
         for (times = 0; (int)*p_a == 0; *p_a *= 10, times++);

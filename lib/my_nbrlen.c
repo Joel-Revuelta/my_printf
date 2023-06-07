@@ -5,6 +5,8 @@
 ** my_nbrlen
 */
 
+#include "my.h"
+
 int my_nbrlen(double nb)
 {
     int a = 0;

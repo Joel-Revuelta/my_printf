@@ -38,13 +38,13 @@ SRC	=	my_compute_power_rec.c		\
 		my_swap.c 					\
 		my_strdup_from.c 			\
 		my_int_len.c 				\
-		my_nbrlen.c 				\
 		my_int_to_str.c 			\
-		pos_n.c
+		pos_n.c						\
+		my_nbrlen.c					\
 
 OBJ	=	$(SRC:.c=.o)
 
-CFLAGS = -w -Wall -Wextra -Werror
+CFLAGS = -W -Wall -Wextra -Werror
 
 NAME	=	libmy.a
 

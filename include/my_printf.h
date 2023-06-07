@@ -32,12 +32,15 @@
     } fnc_t;
 
     int my_printf(const char *format, ...);
-    int get_flags(char *format, int i, flags_t *flags);
+    int get_flags(char const *format, int i, flags_t *flags);
     char *create_arg(flags_t flags, char *c);
     void print_spaces(int strlen, int min_w, int *len);
     char *do_as_gflag(char *dec, int prec);
     long double e_round_dec(double a, int prec, long double b);
     long double e_round(double a);
+    void puc(char c);
+    int status3(int times, int prec, double *a, long double b);
+    void status4(int times, int prec, long double b, long double decimal);
     int fl_c(va_list list, flags_t flags, int *len);
     int fl_d(va_list list, flags_t flags, int *len);
     int fl_prc(va_list list, flags_t flags, int *len);
