@@ -8,7 +8,7 @@
 #include "my.h"
 #include "my_printf.h"
 
-int status4(int times, int prec, long double b, long double decimal)
+void status4(int times, int prec, long double b, long double decimal)
 {
     for (int b = 0; b < prec; decimal *= 10,
         decimal = e_round_dec(decimal, prec, b), my_put_nbr((int)decimal % 10),
@@ -25,7 +25,7 @@ int status4(int times, int prec, long double b, long double decimal)
     }
 }
 
-int status3(int times, int prec, long double *a, long double b)
+int status3(int times, int prec, double *a, long double b)
 {
     long double decimal;
     int x = 0;
@@ -47,9 +47,8 @@ int status3(int times, int prec, long double *a, long double b)
 
 int fl_ee(va_list list, flags_t flags, int *len)
 {
-    long double a = va_arg(list, double), *p_a = &a, hh = a;
-    long double decimal;
-    int b, prec = flags.prec, times = my_nbrlen(a) - 1;
+    double a = va_arg(list, double), *p_a = &a, hh = a;
+    int prec = flags.prec, times = my_nbrlen(a) - 1;
 
     if ((int)*p_a == 0)
         for (times = 0; (int)*p_a == 0; *p_a *= 10, times++);

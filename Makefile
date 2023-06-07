@@ -29,7 +29,7 @@ OBJ	=	$(SRC:.c=.o)
 
 NAME	=	libmy.a
 
-CFLAGS = -w -Wall -Wextra -Werror -I include/ -L lib/ -lmy
+CFLAGS = -W -Wall -Wextra -Werror -I include/ -L lib/ -lmy
 
 TESTS = tests/printf_tests.c
 

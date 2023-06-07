@@ -49,7 +49,7 @@
     int	my_int_len(int nb);
     int my_nbrlen(double nb);
     char *my_int_to_str(int nbr);
-    long long pos_n(long long b);
     long double pos_n_double(long double b);
+    long long pos_n(long long b);
 
 #endif
