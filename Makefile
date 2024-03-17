@@ -63,5 +63,5 @@ re:	fclean all
 unit_tests: fclean all
 	gcc -o $(T_NAME) $(TESTS) $(T_FLAGS)
 
-run_tests: unit_tests
+tests_run: unit_tests
 	./$(T_NAME)
