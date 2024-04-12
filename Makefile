@@ -64,7 +64,7 @@ re:	fclean all
 
 check_criterion:
 	@echo "Checking if Criterion is installed..."
-	@bash -c 'command -v criterion >/dev/null 2>&1 || { echo >&2 "Criterion is not installed. Installing..."; sudo apt-get install -y criterion; }'
+	@bash -c 'command -v criterion >/dev/null 2>&1 || { echo >&2 "Criterion is not installed. Installing..."; apt-get install -y criterion; }'
 
 unit_tests: check_criterion fclean all
 	gcc -o $(T_NAME) $(TESTS) $(T_FLAGS)
